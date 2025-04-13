@@ -38,4 +38,5 @@ def main():
     alphabetical_shifts = alphabetizer(shifts)
     output(alphabetical_shifts)
 
-main()
+if __name__ == "__main__":
+    main()
