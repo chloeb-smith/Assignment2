@@ -1,3 +1,6 @@
+# Chloe Smith
+# Implementation of Pipes and Filters Design Pattern
+
 def pipeline(data, filters):
     result = data
     for f in filters:
@@ -10,9 +13,10 @@ def alphabetize(data):
 def circular_shifter(data):
     return data[::-1]
 
-
-filters = [alphabetize, circular_shifter]
-data = ["banana", "apple", "orange"]
-print(pipeline(data, filters))
+def KWIC_input(data):
+    if type(data) == list:
+        return data
+    elif type(data) == str:
+        return data.split()
 
 
