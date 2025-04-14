@@ -26,7 +26,7 @@ def KWIC_input(data):
         return data.split()
     
 
-data = 'apples oranges bananas'
+data = 'my name is chloe'
 filters = [KWIC_input, alphabetize, circular_shifter]
 
 print(pipeline(data, filters))
