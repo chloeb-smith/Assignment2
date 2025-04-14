@@ -1,3 +1,6 @@
+# Chloe Smith
+# Tests for Pipes and Filters
+
 import KWICPipesFilters as pipes
 
 def main():
