@@ -11,12 +11,24 @@ def alphabetize(data):
     return sorted(data)
 
 def circular_shifter(data):
-    return data[::-1]
+    shifted_list = []
+    
+    for i in range(len(data)):
+        shifted = data[i:] + data[:i]
+        shifted_list.append(" ".join(shifted))
+    
+    return shifted_list
 
 def KWIC_input(data):
     if type(data) == list:
         return data
     elif type(data) == str:
         return data.split()
+    
+
+data = 'apples oranges bananas'
+filters = [KWIC_input, alphabetize, circular_shifter]
+
+print(pipeline(data, filters))
 
 
