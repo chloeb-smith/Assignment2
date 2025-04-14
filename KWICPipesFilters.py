@@ -1,16 +1,18 @@
-def main():
-    pass
+def pipeline(data, filters):
+    result = data
+    for f in filters:
+        result = f(result)
+    return result
 
-main()
+def alphabetize(data):
+    return sorted(data)
 
-def alphabetize():
-    pass
+def circular_shifter(data):
+    return data[::-1]
 
-def circular_shifter():
-    pass
 
-def KWIC_input():
-    pass
+filters = [alphabetize, circular_shifter]
+data = ["banana", "apple", "orange"]
+print(pipeline(data, filters))
 
-def KWIC_output():
-    pass
+
