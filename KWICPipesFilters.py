@@ -1,16 +1,34 @@
-def main():
-    pass
+# Chloe Smith
+# Implementation of Pipes and Filters Design Pattern
 
-main()
+def pipeline(data, filters):
+    result = data
+    for f in filters:
+        result = f(result)
+    return result
 
-def alphabetize():
-    pass
+def alphabetize(data):
+    return sorted(data)
 
-def circular_shifter():
-    pass
+def circular_shifter(data):
+    shifted_list = []
+    
+    for i in range(len(data)):
+        shifted = data[i:] + data[:i]
+        shifted_list.append(" ".join(shifted))
+    
+    return shifted_list
 
-def KWIC_input():
-    pass
+def KWIC_input(data):
+    if type(data) == list:
+        return data
+    elif type(data) == str:
+        return data.split()
+    
 
-def KWIC_output():
-    pass
+data = 'my name is chloe'
+filters = [KWIC_input, alphabetize, circular_shifter]
+
+print(pipeline(data, filters))
+
+
