@@ -1,3 +1,4 @@
+#Code by Wyatt King
 import KWICMainProgramSubroutine
 
 
@@ -9,10 +10,12 @@ def user_input_test():
 
 def circular_shifterTest():
     assert KWICMainProgramSubroutine.circular_shifter(["my name is wyatt"]) == ["my name is wyatt", "name is wyatt my", "is wyatt my name", "wyatt my name is"]
-    print(KWICMainProgramSubroutine.circular_shifter(["my name is wyatt"]))
-#def alphabetizerTest():
+def alphabetizerTest():
+    assert KWICMainProgramSubroutine.alphabetizer(["my name is wyatt", "name is wyatt my", "is wyatt my name", "wyatt my name is"]) == ["is wyatt my name", "my name is wyatt", "name is wyatt my", "wyatt my name is"]
 
-#def outputTest():
+def main(): 
+    user_input_test()
+    circular_shifterTest()
 
-#user_input_test()
-circular_shifterTest()
+if __name__ == "__main__":
+    main()
